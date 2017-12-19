@@ -1,0 +1,79 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<sap.ui.core:View controllerName="cus.sd.salesorder.create.view.SalesOrderCartDetails"
+    xmlns="sap.m"
+    xmlns:sap.ui.layout.form="sap.ui.layout.form"
+    xmlns:sap.ui.layout="sap.ui.layout"
+    xmlns:sap.ui.core="sap.ui.core" >
+    <Page id="SOC_CART_PAGE" class="sapUiFioriObjectPage">
+        <content>
+            <sap.ui.layout.form:SimpleForm minWidth="1024" editable="false">
+                 <sap.ui.core:Title text="{i18n>ORDER_DETAILS}" />
+                    <Label class="soc-table-label-elem-align" text="{i18n>PURCHASE_ORDER}">
+                    </Label>
+                     <Input id="PUR_ORDER" value="{soc_cart>/PurchaseOrder}"
+                      maxLength="35">
+                    </Input>
+                    <Label class="soc-table-label-elem-align" text="{i18n>SHIP_TO_LABEL}">
+                    </Label>
+                    <Select id="AddressSelect" change="onAddressSelect" items="{soc_cart>/PartnerAddressSet}">
+                        <items>
+                            <sap.ui.core:Item text="{soc_cart>PartnerName}" key="{soc_cart>PartnerID}"></sap.ui.core:Item>
+                        </items>
+                    </Select>
+                    <Label text="{i18n>ADDRESS1}">
+                    </Label>
+                    <Text id="addresses1" text="{Address1}" maxLines="0">
+                    </Text>
+                    <Label>
+                    </Label>
+                    <Text id="addresses2" text="{Address2}" visible="false" maxLines="0">
+                    </Text>
+                    <Label text="{i18n>CITY}">
+                    </Label>
+                    <Text id="city" text="{city}" maxLines="0">
+                    </Text>
+                    <Label text="{i18n>STATE}">
+                    </Label>
+                    <Text id="state" text="{state}" maxLines="0">
+                    </Text>
+                    <Label text="{i18n>ZIP}">
+                    </Label>
+                    <Text id="zip" text="{zip}" maxLines="0">
+                    </Text>
+                    <Label text="{i18n>COUNTRY}">
+                    </Label>
+                    <Text id="country" text="{Country}" maxLines="0">
+                    </Text>
+                    <Label text="{i18n>PHONE_NUMBER}">
+                    </Label>
+                    <Text id="phoneNum" text="{soc_cart>/PhoneNumber}" maxLines="0">
+                    </Text>
+                    <Label text="{i18n>CARRIER}">
+                    </Label>
+                    <Text text="{soc_cart>/ShipToCarrier}" maxLines="0">
+                    </Text>
+                    <!-- Extension point for Simple form let you add new field in form -->
+					<sap.ui.core:ExtensionPoint name="extShippingAndPayment" />                                                              
+                    <Label text="{i18n>INCOTERMS}">
+                    </Label>
+                    <Text text="{soc_cart>/ShipToIncoTerms}" >
+                    </Text>
+                    <Label text="{i18n>SHIPPING_INSTRUCTIONS}">
+                    </Label>
+                    <TextArea id = "ship" value="{soc_cart>/ShippingInstructions}" wrapping="None"
+                     maxLength="132">
+                    </TextArea>
+                    <Label text="{i18n>NOTES_TO_RECEIVER}">
+                    </Label>
+                    <TextArea id = "notes" value="{soc_cart>/NotesToReceiver}"  wrapping="None"
+                     maxLength="132">
+                    </TextArea>
+            </sap.ui.layout.form:SimpleForm>
+        </content>
+   
+    </Page>
+</sap.ui.core:View>

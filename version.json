@@ -1,0 +1,8 @@
+{ "application" : "cus.sd.salesorder.create",
+  "version" : "1.6.7",
+  "buildNumber" : "2",
+  "buildId" : "2016-06-01_22-18-51",
+  "branch" : "origin/rel-1.6",
+  "revision" : "210d11a05473a4d9c9e6f7425f82294f81038a12",
+  "GitURL" : ""
+}
